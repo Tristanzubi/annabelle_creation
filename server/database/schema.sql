@@ -1,21 +1,34 @@
-create table user (
-  id int unsigned primary key auto_increment not null,
-  email varchar(255) not null unique,
-  password varchar(255) not null
-);
+CREATE SCHEMA IF NOT EXISTS annabelle DEFAULT CHARACTER SET utf8;
+USE annabelle;
 
-create table item (
-  id int unsigned primary key auto_increment not null,
-  title varchar(255) not null,
-  user_id int unsigned not null,
-  foreign key(user_id) references user(id)
-);
+CREATE TABLE IF NOT EXISTS maker (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(155) NOT NULL,
+  description TEXT(500) NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB;
 
-insert into user(id, email, password)
-values
-  (1, "jdoe@mail.com", "123456");
+INSERT INTO maker (name, description, image)
+VALUES ('Nom du créateur', 'Description du créateur', 'image.jpg');
 
-insert into item(id, title, user_id)
-values
-  (1, "Stuff", 1),
-  (2, "Doodads", 1);
+CREATE TABLE IF NOT EXISTS article (
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(150) NOT NULL,
+  description VARCHAR(150) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  image VARCHAR(45) NOT NULL,
+  maker_id INT NOT NULL,
+  PRIMARY KEY (id),
+  INDEX fk_article_maker_idx (maker_id ASC),
+  CONSTRAINT fk_article_maker
+    FOREIGN KEY (maker_id)
+    REFERENCES maker (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+) ENGINE=InnoDB;
+
+INSERT INTO article (title, description, price, image, maker_id)
+VALUES ('Sac en cuir', 'Sac fait main en cuir véritable', '120', 'sac.jpg', 1);
+
+
