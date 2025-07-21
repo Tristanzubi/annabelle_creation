@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+
+  h1 {
+    margin: 20px;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    margin: 20px;
+    font-size: 1.5rem;
+  }
+  li {
+    a {
+      transition: background-color 0.3s ease;
+      &:hover {
+        color: #8d8d8d;
+      }
+    }
+  }
+}
