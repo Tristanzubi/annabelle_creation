@@ -3,11 +3,18 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
 
 import App from "./App";
+import ArticlePage from "./pages/ArticlePage/ArticlePage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/article",
+        element: <ArticlePage />,
+      },
+    ],
   },
 ]);
 
