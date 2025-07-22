@@ -1,4 +1,4 @@
-import databaseClient from "../../../database/client";
+import databaseClient, { type Result } from "../../../database/client";
 
 class ArticleRepository {
   async readAll() {
@@ -20,6 +20,20 @@ class ArticleRepository {
       [body.title, body.description, body.image, body.price, body.maker_id],
     );
     return result;
+  }
+
+  async updateArticle(article: Article) {
+    const [result] = await databaseClient.query<Result>(
+      "UPDATE article SET title = ?, description = ?, image = ?, price = ? WHERE id = ?",
+      [
+        article.title,
+        article.description,
+        article.image,
+        article.price,
+        article.id,
+      ],
+    );
+    return result.affectedRows;
   }
 }
 

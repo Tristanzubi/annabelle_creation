@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS article (
   title VARCHAR(150) NOT NULL,
   description VARCHAR(150) NOT NULL,
   price DECIMAL(10,2) NOT NULL,
-  image VARCHAR(255) NOT NULL,
+  image VARCHAR(255),
   maker_id INT NOT NULL,
   PRIMARY KEY (id),
   INDEX fk_article_maker_idx (maker_id ASC),
