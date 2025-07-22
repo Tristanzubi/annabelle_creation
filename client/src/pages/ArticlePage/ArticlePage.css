@@ -1,0 +1,11 @@
+.article-page {
+  h1 {
+    text-align: center;
+  }
+
+  section {
+    display: flex;
+    max-width: 100vw;
+    flex-wrap: wrap;
+  }
+}
