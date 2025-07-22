@@ -35,6 +35,14 @@ class ArticleRepository {
     );
     return result.affectedRows;
   }
+
+  async deleteArticle(id: number) {
+    const [result] = await databaseClient.query<Result>(
+      "DELETE FROM article WHERE id = ?",
+      [id],
+    );
+    return result.affectedRows;
+  }
 }
 
 export default new ArticleRepository();
