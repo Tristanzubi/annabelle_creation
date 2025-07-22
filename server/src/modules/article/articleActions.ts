@@ -59,9 +59,27 @@ const editArticle: RequestHandler = async (req, res, next) => {
   }
 };
 
+const deleteArticle: RequestHandler = async (req, res, next) => {
+  try {
+    const articleId = Number(req.params.id);
+    if (!articleId || articleId <= 0) {
+      res.status(404).json("Invalid article ID");
+    }
+    const deleteArticle = await articleRepository.deleteArticle(articleId);
+    if (deleteArticle === 0) {
+      res.status(404).json("Article not found");
+      return;
+    }
+    res.status(200).json("Article deleted successfully");
+  } catch (error) {
+    next(error);
+  }
+};
+
 export default {
   browse,
   readById,
   createArticle,
   editArticle,
+  deleteArticle,
 };
