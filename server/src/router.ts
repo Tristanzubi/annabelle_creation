@@ -12,6 +12,7 @@ import articleActions from "./modules/article/articleActions";
 router.get("/api/article", articleActions.browse);
 router.get("/api/article/:id", articleActions.readById);
 router.post("/api/article", articleActions.createArticle);
+router.put("/api/article/:id", articleActions.editArticle);
 
 /* ************************************************************************* */
 

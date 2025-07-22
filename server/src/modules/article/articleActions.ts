@@ -38,8 +38,30 @@ const createArticle: RequestHandler = async (req, res, next) => {
   }
 };
 
+const editArticle: RequestHandler = async (req, res, next) => {
+  try {
+    const newArticle = {
+      id: Number(req.params.id),
+      title: req.body.title,
+      description: req.body.description,
+      image: req.body.image,
+      price: req.body.price,
+      maker_id: req.body.maker_id,
+    };
+    const result = await articleRepository.updateArticle(newArticle);
+    if (result === 0) {
+      res.status(404).json("Article not found");
+    } else {
+      res.status(200).json("Article updated successfully");
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
 export default {
   browse,
   readById,
   createArticle,
+  editArticle,
 };
