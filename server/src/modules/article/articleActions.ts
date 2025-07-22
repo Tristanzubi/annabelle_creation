@@ -25,7 +25,21 @@ const readById: RequestHandler = async (req, res, next) => {
   }
 };
 
+const createArticle: RequestHandler = async (req, res, next) => {
+  try {
+    const createArticle = await articleRepository.createArticle(req.body);
+    if (createArticle) {
+      res.status(200).json("Article created successfully");
+    } else {
+      res.status(404).json("Failed to create article");
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
 export default {
   browse,
   readById,
+  createArticle,
 };
