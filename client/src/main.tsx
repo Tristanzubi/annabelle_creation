@@ -3,7 +3,9 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
 
 import App from "./App";
+import ArticleManagementPage from "./pages/ArticleManagementPage/ArticleManagementPage";
 import ArticlePage from "./pages/ArticlePage/ArticlePage";
+import EditArticlePage from "./pages/EditArticlePage/EditArticlePage";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
       {
         path: "/article",
         element: <ArticlePage />,
+      },
+      {
+        path: "/gestion",
+        element: <ArticleManagementPage />,
+      },
+      {
+        path: "/edit/:id",
+        element: <EditArticlePage />,
       },
     ],
   },
