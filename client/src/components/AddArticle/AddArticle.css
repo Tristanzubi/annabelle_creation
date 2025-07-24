@@ -1,0 +1,49 @@
+.add-article {
+  width: 70vw;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    label {
+      margin: 10px 10px 0 12px;
+    }
+
+    input {
+      margin: 8px 5px 10px 5px;
+      background-color: rgb(247, 244, 244);
+      width: 300px;
+      margin: 0 auto;
+      height: 30px;
+      border-radius: 8px;
+      border: solid 1px grey;
+    }
+
+    select {
+      margin: 20px auto 10px auto;
+      background-color: rgb(247, 244, 244);
+      width: 300px;
+      height: 37px;
+      border-radius: 8px;
+      border: solid 1px grey;
+    }
+
+    button {
+      border: none;
+      height: 40px;
+      width: 110px;
+      cursor: pointer;
+      border-radius: 8px;
+      background: #183040;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      margin: 15px auto;
+      transition: background 0.2s;
+    }
+  }
+}
