@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router";
 
 import App from "./App";
+import ArticleDetailPage from "./pages/ArticleDetailPage/ArticleDetailPage";
 import ArticleManagementPage from "./pages/ArticleManagementPage/ArticleManagementPage";
 import ArticlePage from "./pages/ArticlePage/ArticlePage";
 import EditArticlePage from "./pages/EditArticlePage/EditArticlePage";
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/edit/:id",
         element: <EditArticlePage />,
+      },
+      {
+        path: "/article/:id",
+        element: <ArticleDetailPage />,
       },
     ],
   },

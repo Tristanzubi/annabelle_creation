@@ -5,4 +5,6 @@ interface Article {
   price: number;
   image: string;
   maker_id: number;
+  maker_name: string;
+  maker_image: string;
 }

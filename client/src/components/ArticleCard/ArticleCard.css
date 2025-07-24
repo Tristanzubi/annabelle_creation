@@ -1,5 +1,6 @@
 .article-card {
   width: 350px;
+  height: 400px;
   background-color: var(--primary-color);
   margin: 20px auto;
   transition: transform 0.3s ease;
@@ -12,6 +13,7 @@
 
   h2 {
     text-align: center;
+    padding-top: 10px;
   }
   img {
     width: 100%;
