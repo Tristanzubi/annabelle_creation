@@ -19,9 +19,6 @@ function Header() {
           <li>
             <Link to="/gestion">Gestion</Link>
           </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
         </ul>
       </nav>
     </header>

@@ -8,7 +8,14 @@ class ArticleRepository {
 
   async readById(id: number) {
     const [rows] = await databaseClient.query(
-      "SELECT * FROM article WHERE id = ?",
+      `SELECT 
+       a.*, 
+       m.name AS maker_name, 
+       m.description AS maker_description, 
+       m.image AS maker_image
+     FROM article a
+     JOIN maker m ON a.maker_id = m.id
+     WHERE a.id = ?`,
       [id],
     );
     return rows;

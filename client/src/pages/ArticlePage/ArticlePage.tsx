@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ArticlePage.css";
+import { Link } from "react-router";
 import ArticleCard from "../../components/ArticleCard/ArticleCard";
 
 function ArticlePage() {
@@ -16,7 +17,9 @@ function ArticlePage() {
       <h1>Articles</h1>
       <section>
         {article.map((article) => (
-          <ArticleCard key={article.id} article={article} />
+          <Link to={`/article/${article.id}`} key={article.id}>
+            <ArticleCard article={article} />
+          </Link>
         ))}
       </section>
     </main>

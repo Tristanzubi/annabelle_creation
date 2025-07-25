@@ -1,0 +1,29 @@
+.article-detail-page {
+  .description {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  h2 {
+    text-align: center;
+  }
+
+  .maker-detail {
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    img {
+      width: 300px;
+      margin-bottom: 50px;
+    }
+  }
+}
